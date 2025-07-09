@@ -40,7 +40,8 @@ The neural network is trained to recommend the dose that most closely achieves t
 
 ### 2. Install Dependencies
 
-```bash!pip install -r requirements.txt
+```bash
+!pip install -r requirements.txt
 ```
 
 ### 3. Run the PK Simulation (Optional)
