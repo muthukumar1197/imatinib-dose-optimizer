@@ -34,26 +34,25 @@ The neural network is trained to recommend the dose that most closely achieves t
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/muthukumar1197/imatinib-dose-optimizer.git
-cd imatinib-dose-optimizer
+!git clone https://github.com/muthukumar1197/imatinib-dose-optimizer.git
+%cd imatinib-dose-optimizer
 ```
 
 ### 2. Install Dependencies
 
-```bash
-pip install -r requirements.txt
+```bash!pip install -r requirements.txt
 ```
 
 ### 3. Run the PK Simulation (Optional)
 
 ```bash
-python pk_model.py  # generates dose_auc_simulated_data.csv
+!python pk_model.py  # generates dose_auc_simulated_data.csv
 ```
 
 ### 4. Train the Neural Network and Perform Analysis
 
 ```bash
-python full_dose_auc_pipeline.py
+!python Neural Network.py
 ```
 
 ---
