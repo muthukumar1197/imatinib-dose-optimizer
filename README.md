@@ -87,7 +87,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 💬 Questions or Contributions?
 
-Feel free to [open an issue](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME/issues) or reach out!
+Feel free to [open an issue](https://github.com/muthukumar1197/imatinib-dose-optimizer/issues) or reach out!
 
 ---
 
