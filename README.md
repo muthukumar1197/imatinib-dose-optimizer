@@ -47,13 +47,13 @@ The neural network is trained to recommend the dose that most closely achieves t
 ### 3. Run the PK Simulation (Optional)
 
 ```bash
-!python pk_model.py  # generates dose_auc_simulated_data.csv
+!python PK_Model.py  # generates dose_auc_simulated_data.csv
 ```
 
 ### 4. Train the Neural Network and Perform Analysis
 
 ```bash
-!python Neural Network.py
+!python Neural_Network.py
 ```
 
 ---
