@@ -1,37 +1,94 @@
-# 🎯 Personalized Imatinib Dosing using PK Simulation + Neural Network Surrogate
+# 🧠 Dose Optimization Using PK Simulation and Neural Network Surrogate
 
-This repository provides a full pipeline for simulating pharmacokinetics (PK) of imatinib using a physiologically based two-compartment model, training a neural network surrogate model, and recommending individualized doses based on predicted AUC (Area Under Curve).
+This project presents a precision dosing framework for **Imatinib** using a two-compartment **pharmacokinetic (PK) model** (Yi-Han Chien et al.) combined with a **neural network (NN) surrogate model** to predict patient-specific dose–AUC relationships.
 
-## 🧠 Project Summary
-
-- **PK Simulation**: Based on the Yi-Han Chien two-compartment model with transit absorption.
-- **Neural Network Surrogate**: Trained on simulated dose–AUC data to predict exposure from patient covariates.
-- **Uncertainty Estimation**: Monte Carlo dropout is used to estimate prediction uncertainty.
-- **Realistic Validation**: 5 virtual patients used for case-based dose recommendations.
-- **Sensitivity Analysis**: Shows how changes in age, weight, height affect dose and AUC.
-- **Target AUC**: `32.5 mg·h/L` — optimal therapeutic exposure for imatinib.
+The goal is to develop a **clinically usable AI tool** to recommend individualized doses with uncertainty estimation.
 
 ---
 
-## 📁 Files Overview
+## 📂 Repository Contents
 
-| File / Folder                       | Description |
-|------------------------------------|-------------|
-| `pk_model.py`                      | Simulates imatinib exposure using PBPK model |
-| `Neural Network.py`        | Trains neural net, predicts dose, performs uncertainty & sensitivity analysis |
-| `dose_auc_simulated_data.csv`      | Dose–AUC dataset generated from PK simulations |
-| `virtual_patient_dose_predictions.csv` | Recommended doses for 5 virtual patients |
-| `dose_sensitivity_analysis.csv`    | Sensitivity of dose to covariate variations |
-| `dose_auc_uncertainty_patient1.png`| Uncertainty band around dose–AUC curve |
-| `summary_dose_recommendations_table.png` | Tabular summary of 5 patient recommendations |
-| `requirements.txt`                 | Python dependencies to run the code |
+* `pk_model.py`: PK simulation model using a transit-absorption two-compartment approach
+* `full_dose_auc_pipeline.py`: Neural network training, AUC prediction, and uncertainty analysis
+* `dose_auc_simulated_data.csv`: Simulated dose–AUC dataset from the PK model
+* `summary_exposure_metrics.csv`: Derived AUC summaries used for training
+* `virtual_patient_dose_predictions.csv`: Recommended doses for 5 virtual patients
+* `dose_sensitivity_analysis.csv`: Sensitivity analysis results
+* `summary_dose_recommendations_table.png`: AUC prediction summary image (for manuscript)
+* `dose_auc_uncertainty_patient1.png`: Dose–AUC curve with uncertainty for Patient 1
+* `requirements.txt`: Required Python packages
+* `LICENSE`: MIT open-source license
 
 ---
 
-## 🧪 How to Use (Colab Recommended)
+## 🎯 Target AUC
 
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
+> The clinical target AUC for Imatinib is **\~32.5 mg·h/L**, based on published therapeutic window studies.
 
+The neural network is trained to recommend the dose that most closely achieves this target AUC for any given patient.
+
+---
+
+## 🚀 How to Use
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+cd YOUR_REPO_NAME
+```
+
+### 2. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Run the PK Simulation (Optional)
+
+```bash
+python pk_model.py  # generates dose_auc_simulated_data.csv
+```
+
+### 4. Train the Neural Network and Perform Analysis
+
+```bash
+python full_dose_auc_pipeline.py
+```
+
+---
+
+## 📊 Sample Output
+
+* **Virtual Patient Dose Recommendations:**
+  See `virtual_patient_dose_predictions.csv`
+
+* **Uncertainty Visualization:**
+  ![Dose AUC Curve](dose_auc_uncertainty_patient1.png)
+
+* **Sensitivity Heatmap:**
+  ![Sensitivity](sensitivity_heatmap_dose.png)
+
+---
+
+## 📚 Citation
+
+If you use this project in your work, please cite the forthcoming paper:
+
+> Muthukumar et al. *A Neural Network Surrogate Model for Simulated Pharmacokinetics in Individualized Imatinib Dosing*, submitted to Acta Materia Medica, 2025.
+
+---
+
+## 🚪 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 💬 Questions or Contributions?
+
+Feel free to [open an issue](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME/issues) or reach out!
+
+---
+
+🎓 Built with ❤️ for AI-powered precision medicine.
