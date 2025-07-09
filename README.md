@@ -1,26 +1,37 @@
-# Imatinib Dose Optimization using PK Simulation and Neural Network Surrogate
+# 🎯 Personalized Imatinib Dosing using PK Simulation + Neural Network Surrogate
 
-This repository contains the full pipeline used to simulate pharmacokinetic (PK) profiles of imatinib using a two-compartment model (Yi-Han Chien), train a neural network surrogate model, and predict optimal personalized doses based on simulated AUC targets.
+This repository provides a full pipeline for simulating pharmacokinetics (PK) of imatinib using a physiologically based two-compartment model, training a neural network surrogate model, and recommending individualized doses based on predicted AUC (Area Under Curve).
 
-## 🚀 Project Overview
+## 🧠 Project Summary
 
-- **PK Model**: Simulates AUC using a physiologically-based two-compartment model with transit absorption.
-- **Neural Network Model**: Trained to predict AUC from patient features + dose.
-- **Validation**: Five virtual patients + sensitivity analysis.
-- **Uncertainty**: Monte Carlo dropout for AUC prediction uncertainty.
-- **Visualization**: Dose–AUC plots, heatmaps, summary tables.
+- **PK Simulation**: Based on the Yi-Han Chien two-compartment model with transit absorption.
+- **Neural Network Surrogate**: Trained on simulated dose–AUC data to predict exposure from patient covariates.
+- **Uncertainty Estimation**: Monte Carlo dropout is used to estimate prediction uncertainty.
+- **Realistic Validation**: 5 virtual patients used for case-based dose recommendations.
+- **Sensitivity Analysis**: Shows how changes in age, weight, height affect dose and AUC.
+- **Target AUC**: `32.5 mg·h/L` — optimal therapeutic exposure for imatinib.
 
-## 📂 Files
+---
 
-- `pk_model.py`: Generates virtual patient dose–AUC data.
-- `Neural Network.py`: Neural network model with dose prediction, uncertainty estimation, and plots.
-- `dose_auc_simulated_data.csv`: Output from PK model (can be regenerated).
-- `summary_exposure_metrics.csv`: Summary AUC metrics.
-- `virtual_patient_dose_predictions.csv`: Dose recommendations.
-- `dose_sensitivity_analysis.csv`: Results of sensitivity testing.
+## 📁 Files Overview
 
-## 💾 Requirements
+| File / Folder                       | Description |
+|------------------------------------|-------------|
+| `pk_model.py`                      | Simulates imatinib exposure using PBPK model |
+| `Neural Network.py`        | Trains neural net, predicts dose, performs uncertainty & sensitivity analysis |
+| `dose_auc_simulated_data.csv`      | Dose–AUC dataset generated from PK simulations |
+| `virtual_patient_dose_predictions.csv` | Recommended doses for 5 virtual patients |
+| `dose_sensitivity_analysis.csv`    | Sensitivity of dose to covariate variations |
+| `dose_auc_uncertainty_patient1.png`| Uncertainty band around dose–AUC curve |
+| `summary_dose_recommendations_table.png` | Tabular summary of 5 patient recommendations |
+| `requirements.txt`                 | Python dependencies to run the code |
 
-Install with pip:
-```bash
-pip install numpy pandas matplotlib seaborn scipy scikit-learn tensorflow
+---
+
+## 🧪 How to Use (Colab Recommended)
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name
+
