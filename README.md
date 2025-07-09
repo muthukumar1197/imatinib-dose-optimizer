@@ -34,7 +34,7 @@ The neural network is trained to recommend the dose that most closely achieves t
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+git clone https://github.com/muthukumar1197/imatinib-dose-optimizer.git
 cd YOUR_REPO_NAME
 ```
 
